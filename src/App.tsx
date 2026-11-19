@@ -13,6 +13,7 @@ import JutsuPage from './pages/JutsuPage'
 import JutsuDetailPage from './pages/JutsuDetailPage'
 import AkatsukiPage from './pages/AkatsukiPage'
 import ClansPage from './pages/ClansPage'
+import QuizPage from './pages/QuizPage'
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
         <Route path="/jutsu/:id" element={<JutsuDetailPage />} />
 
         <Route path="/clans" element={<ClansPage />} />
+
+        <Route path="/quiz" element={<QuizPage />} />
 
         <Route path="/akatsuki" element={<AkatsukiPage />} />
       </Routes>
