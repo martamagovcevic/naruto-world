@@ -1,0 +1,1740 @@
+.akatsuki-page {
+  background-color: #0b1117;
+  overflow-x: clip;
+}
+
+/* ========================================
+   RED CLOUD MOTIF
+======================================== */
+
+.ak-cloud {
+  --cb: 10px;
+
+  position: relative;
+  display: inline-block;
+
+  width: 7.4em;
+  height: 4.6em;
+
+  color: currentColor;
+  font-size: var(--cb);
+
+  pointer-events: none;
+}
+
+.ak-cloud i {
+  position: absolute;
+
+  display: block;
+
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.ak-cloud i:nth-child(1) {
+  left: 0;
+  bottom: 0.4em;
+
+  width: 2.3em;
+  height: 1.6em;
+}
+
+.ak-cloud i:nth-child(2) {
+  left: 2.2em;
+  top: 0.8em;
+
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.ak-cloud i:nth-child(3) {
+  left: 4.9em;
+  bottom: 0.6em;
+
+  width: 2.1em;
+  height: 1.8em;
+
+  transform: skewX(-8deg);
+}
+
+/* ========================================
+   CINEMATIC HERO
+======================================== */
+
+.akatsuki-hero {
+  position: relative;
+
+  min-height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: calc(var(--nav-h, 72px) * -1);
+  padding: calc(var(--nav-h, 72px) + 36px) 6% 42px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse 80% 62% at 50% 34%,
+      rgba(178, 26, 43, 0.2),
+      transparent 62%
+    ),
+    linear-gradient(
+      180deg,
+      #150b0e 0%,
+      #0d0b10 52%,
+      #0b1117 100%
+    );
+
+  isolation: isolate;
+}
+
+.akatsuki-hero__kanji {
+  position: absolute;
+  top: -4%;
+  left: 50%;
+
+  z-index: -1;
+
+  transform: translateX(-50%) rotate(-7deg);
+
+  font-family: 'Bangers', cursive;
+  font-size: clamp(210px, 34vw, 440px);
+  line-height: 0.8;
+
+  color: rgba(196, 40, 58, 0.07);
+
+  user-select: none;
+}
+
+.akatsuki-hero__cloud {
+  position: absolute;
+
+  color: #ff4057;
+
+  animation: akatsuki-cloud-drift 30s linear infinite;
+
+  pointer-events: none;
+}
+
+.akatsuki-hero__cloud--a {
+  --cb: 46px;
+
+  left: -12%;
+  top: 16%;
+
+  animation-delay: -4s;
+}
+
+.akatsuki-hero__cloud--b {
+  --cb: 30px;
+
+  left: -12%;
+  top: 46%;
+  color: #ff6a5c;
+
+  animation-delay: -16s;
+}
+
+.akatsuki-hero__cloud--c {
+  --cb: 54px;
+
+  left: -12%;
+  top: 74%;
+
+  animation-delay: -24s;
+}
+
+.akatsuki-hero__glow {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+
+  width: 720px;
+  height: 720px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(214, 54, 71, 0.16),
+    rgba(214, 54, 71, 0.05) 48%,
+    transparent 72%
+  );
+
+  filter: blur(46px);
+
+  animation: akatsuki-glow-breathe 8s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.akatsuki-hero__content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 780px;
+}
+
+.akatsuki-hero__eyebrow {
+  margin-bottom: 18px;
+
+  font-family: 'Permanent Marker', cursive;
+  font-size: 16px;
+  letter-spacing: 2px;
+
+  color: #ff7d88;
+
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+.akatsuki-hero__title {
+  margin-bottom: 24px;
+
+  font-family: 'Bangers', cursive;
+  font-size: clamp(66px, 10.5vw, 132px);
+  line-height: 0.9;
+  letter-spacing: 4px;
+
+  background: linear-gradient(
+    180deg,
+    #fff3f2 10%,
+    #ff9aa3 46%,
+    #c91d33 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  filter: drop-shadow(0 10px 34px rgba(0, 0, 0, 0.6));
+}
+
+.akatsuki-hero__tagline {
+  max-width: 640px;
+  margin: 0 auto 30px;
+
+  color: #c3b6ba;
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.akatsuki-hero__cta {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 26px;
+
+  cursor: pointer;
+
+  color: #fff1f2;
+
+  background: linear-gradient(135deg, #d0333f, #8f1626);
+
+  border: 1px solid rgba(255, 122, 136, 0.45);
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+
+  box-shadow: 0 10px 30px rgba(178, 26, 43, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.akatsuki-hero__cta:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(135deg, #e0434f, #a0192b);
+
+  box-shadow: 0 14px 36px rgba(178, 26, 43, 0.5);
+}
+
+.akatsuki-hero__cta span {
+  font-size: 16px;
+
+  transition: transform 0.25s ease;
+}
+
+.akatsuki-hero__cta:hover span {
+  transform: translateY(3px);
+}
+
+/* ========================================
+   MEMBERS ARCHIVE
+======================================== */
+
+.akatsuki-roster {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 100% - 48px);
+  margin: -30px auto 0;
+
+  padding: 0 0 104px;
+
+  scroll-margin-top: var(--nav-h, 72px);
+}
+
+.akatsuki-roster__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  margin-bottom: 28px;
+}
+
+.akatsuki-roster__eyebrow {
+  margin-bottom: 10px;
+
+  font-family: 'Permanent Marker', cursive;
+  font-size: 13px;
+  letter-spacing: 2px;
+
+  color: #ff5f6d;
+}
+
+.akatsuki-roster__title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(42px, 5.5vw, 60px);
+  line-height: 1;
+  letter-spacing: 2px;
+
+  color: #ffffff;
+}
+
+.akatsuki-roster__count {
+  padding-bottom: 6px;
+
+  color: #8b97a1;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+}
+
+/* --- shared member image treatment --- */
+
+.akatsuki-feature__media img,
+.akatsuki-tile__media img,
+.akatsuki-drawer__media img {
+  filter: saturate(0.86) contrast(1.03) brightness(0.98);
+}
+
+/* --- featured leader dossier --- */
+
+.akatsuki-feature {
+  --ak-member: #ff4057;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+
+  width: 100%;
+  min-height: 316px;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  color: #ffffff;
+
+  background: #120a0d;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+
+  font: inherit;
+
+  isolation: isolate;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.akatsuki-feature:hover {
+  transform: translateY(-3px);
+
+  border-color: color-mix(in srgb, var(--ak-member) 50%, transparent);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.48),
+    0 0 0 1px color-mix(in srgb, var(--ak-member) 24%, transparent),
+    0 0 30px color-mix(in srgb, var(--ak-member) 16%, transparent);
+}
+
+.akatsuki-feature:focus-visible {
+  outline: 2px solid var(--ak-member);
+  outline-offset: 2px;
+}
+
+.akatsuki-feature__media {
+  position: relative;
+
+  min-height: 100%;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      color-mix(in srgb, var(--ak-member) 26%, transparent),
+      #120a0d 86%
+    );
+}
+
+.akatsuki-feature__media img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+
+  transform: scale(1.03);
+
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.akatsuki-feature:hover .akatsuki-feature__media img {
+  transform: scale(1.07);
+}
+
+.akatsuki-feature__media::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 95, 109, 0.06) 0%,
+    rgba(120, 18, 34, 0.16) 46%,
+    #120a0d 100%
+  );
+}
+
+.akatsuki-feature__glyph {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  font-family: 'Bangers', cursive;
+  font-size: clamp(110px, 14vw, 170px);
+  line-height: 1;
+
+  color: color-mix(in srgb, var(--ak-member) 44%, transparent);
+
+  text-shadow: 0 0 54px color-mix(in srgb, var(--ak-member) 50%, transparent);
+}
+
+.akatsuki-feature__veil {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 88% 110%,
+      color-mix(in srgb, var(--ak-member) 12%, transparent),
+      transparent 46%
+    );
+
+  pointer-events: none;
+}
+
+.akatsuki-feature__body {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: clamp(24px, 3.2vw, 38px);
+
+  min-width: 0;
+}
+
+.akatsuki-feature__index {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+
+  color: rgba(240, 224, 227, 0.45);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.akatsuki-feature__leader {
+  margin-bottom: 8px;
+
+  color: #ff6a74;
+
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.akatsuki-feature__name {
+  margin-bottom: 4px;
+
+  font-family: 'Bangers', cursive;
+  font-size: clamp(46px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 2px;
+
+  color: #ffffff;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.akatsuki-feature:hover .akatsuki-feature__name {
+  color: #ff5a67;
+
+  transform: translateY(-2px);
+}
+
+.akatsuki-feature__role {
+  margin-bottom: 14px;
+
+  color: #9aa5af;
+
+  font-size: 12.5px;
+  letter-spacing: 0.4px;
+}
+
+.akatsuki-feature__ring {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 12px;
+  padding: 5px 14px 5px 8px;
+
+  color: #f3d9dc;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 95, 109, 0.32);
+  border-radius: 999px;
+
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.akatsuki-feature__ring b {
+  display: grid;
+  place-items: center;
+
+  width: 26px;
+  height: 26px;
+
+  color: #ff6a74;
+
+  background: rgba(178, 26, 43, 0.18);
+
+  border-radius: 50%;
+
+  font-family: 'Bangers', cursive;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.akatsuki-feature__meta {
+  margin-bottom: 14px;
+
+  color: #cfd6dc;
+
+  font-size: 12.5px;
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+}
+
+.akatsuki-feature__hint {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: auto;
+
+  color: #ff6a74;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.akatsuki-feature__hint span {
+  transition: transform 0.25s ease;
+}
+
+.akatsuki-feature:hover .akatsuki-feature__hint span {
+  transform: translateX(4px);
+}
+
+/* --- uniform member grid --- */
+
+.akatsuki-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+
+  margin-top: 22px;
+}
+
+.akatsuki-tile {
+  --ak-member: #ff4057;
+
+  position: relative;
+
+  display: block;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  color: #ffffff;
+
+  background-color: #120a0d;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+
+  font: inherit;
+
+  isolation: isolate;
+
+  animation: akatsuki-tile-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 45ms);
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.akatsuki-tile:hover {
+  transform: translateY(-4px);
+
+  border-color: color-mix(in srgb, var(--ak-member) 50%, transparent);
+
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.45),
+    0 0 0 1px color-mix(in srgb, var(--ak-member) 24%, transparent),
+    0 0 24px color-mix(in srgb, var(--ak-member) 15%, transparent);
+}
+
+.akatsuki-tile:focus-visible {
+  outline: 2px solid var(--ak-member);
+  outline-offset: 2px;
+}
+
+.akatsuki-tile__index {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+
+  z-index: 4;
+
+  color: rgba(240, 224, 227, 0.55);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.akatsuki-tile__ring {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  z-index: 4;
+
+  display: grid;
+  place-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  color: var(--ak-member);
+
+  background: rgba(9, 13, 18, 0.6);
+
+  border: 1px solid color-mix(in srgb, var(--ak-member) 45%, transparent);
+  border-radius: 50%;
+
+  font-family: 'Bangers', cursive;
+  font-size: 19px;
+  line-height: 1;
+
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+
+  pointer-events: none;
+}
+
+.akatsuki-tile__media {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at 50% 34%,
+    color-mix(in srgb, var(--ak-member) 24%, transparent),
+    #120a0d 88%
+  );
+}
+
+.akatsuki-tile__media img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+
+  transform: scale(1.04);
+
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.akatsuki-tile__media::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background: color-mix(in srgb, var(--ak-member) 15%, transparent);
+
+  mix-blend-mode: color;
+
+  opacity: 0.5;
+
+  transition: opacity 0.35s ease;
+
+  pointer-events: none;
+}
+
+.akatsuki-tile:hover .akatsuki-tile__media img {
+  transform: scale(1.09);
+}
+
+.akatsuki-tile:hover .akatsuki-tile__media::after {
+  opacity: 0.8;
+}
+
+.akatsuki-tile__glyph {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  font-family: 'Bangers', cursive;
+  font-size: clamp(54px, 6vw, 104px);
+  line-height: 1;
+
+  color: color-mix(in srgb, var(--ak-member) 42%, transparent);
+
+  text-shadow: 0 0 40px color-mix(in srgb, var(--ak-member) 46%, transparent);
+
+  transition:
+    color 0.35s ease,
+    transform 0.45s ease;
+}
+
+.akatsuki-tile:hover .akatsuki-tile__glyph {
+  color: color-mix(in srgb, var(--ak-member) 92%, #ffffff);
+
+  transform: scale(1.05);
+}
+
+.akatsuki-tile__veil {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  background: linear-gradient(
+    180deg,
+    rgba(12, 6, 9, 0.26) 0%,
+    transparent 32%,
+    transparent 48%,
+    rgba(10, 5, 7, 0.72) 76%,
+    rgba(6, 3, 5, 0.94) 100%
+  );
+
+  pointer-events: none;
+}
+
+.akatsuki-tile__cloud {
+  position: absolute;
+  top: 22%;
+  right: -8%;
+
+  z-index: 2;
+
+  transform: rotate(10deg);
+
+  --cb: 6px;
+
+  color: color-mix(in srgb, var(--ak-member) 72%, transparent);
+
+  opacity: 0.5;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+
+  pointer-events: none;
+}
+
+.akatsuki-tile:hover .akatsuki-tile__cloud {
+  transform: rotate(6deg) translateX(-14px);
+
+  opacity: 0.9;
+}
+
+.akatsuki-tile__caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.akatsuki-tile__role {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color: color-mix(in srgb, var(--ak-member) 88%, #ffffff);
+}
+
+.akatsuki-tile__name {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+
+  color: #ffffff;
+
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.akatsuki-tile:hover .akatsuki-tile__name {
+  color: #ff5a67;
+
+  transform: translateY(-2px);
+}
+
+.akatsuki-tile__partner {
+  overflow: hidden;
+
+  margin-top: 4px;
+
+  color: #cdb5ba;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  opacity: 0;
+  transform: translateY(6px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.akatsuki-tile:hover .akatsuki-tile__partner {
+  opacity: 1;
+  transform: none;
+}
+
+/* ========================================
+   ORGANIZATION
+======================================== */
+
+.akatsuki-org {
+  position: relative;
+
+  width: min(1280px, 100% - 48px);
+  margin: 0 auto;
+
+  padding: 22px 0 116px;
+
+  overflow: clip;
+}
+
+.akatsuki-org__cloud {
+  position: absolute;
+
+  z-index: 0;
+
+  color: rgba(255, 95, 109, 0.055);
+
+  pointer-events: none;
+}
+
+.akatsuki-org__cloud--a {
+  --cb: 92px;
+
+  top: 4%;
+  left: -2%;
+
+  transform: rotate(-10deg);
+}
+
+.akatsuki-org__cloud--b {
+  --cb: 38px;
+
+  right: -1%;
+  bottom: 8%;
+
+  transform: rotate(14deg);
+
+  color: rgba(255, 95, 109, 0.06);
+}
+
+.akatsuki-org__grid {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+
+  gap: 64px;
+
+  align-items: start;
+
+  padding-top: 40px;
+
+  border-top: 1px solid rgba(255, 95, 109, 0.16);
+}
+
+.akatsuki-org__narrative {
+  max-width: 680px;
+}
+
+.akatsuki-org__eyebrow {
+  margin-bottom: 12px;
+
+  font-family: 'Permanent Marker', cursive;
+  font-size: 13px;
+  letter-spacing: 2px;
+
+  color: #ff5f6d;
+}
+
+.akatsuki-org__title {
+  margin-bottom: 24px;
+
+  font-family: 'Bangers', cursive;
+  font-size: clamp(42px, 5.5vw, 58px);
+  line-height: 1;
+  letter-spacing: 2px;
+
+  color: #ffffff;
+}
+
+.akatsuki-org__lead {
+  color: #b8c2cb;
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.akatsuki-org__facts {
+  display: grid;
+
+  margin: 0;
+}
+
+.akatsuki-org__facts > div {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+
+  gap: 4px 18px;
+
+  align-items: center;
+
+  padding: 20px 4px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.akatsuki-org__facts > div:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.akatsuki-org__facts .ak-cloud {
+  --cb: 7px;
+
+  grid-row: 1 / span 2;
+
+  justify-self: start;
+
+  color: rgba(255, 95, 109, 0.65);
+}
+
+.akatsuki-org__facts dt {
+  color: #6d7882;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.akatsuki-org__facts dd {
+  margin: 0;
+
+  color: #f0f3f6;
+
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* ========================================
+   MEMBER DRAWER  ·  CLASSIFIED DOSSIER
+======================================== */
+
+.akatsuki-drawer {
+  position: fixed;
+  inset: 0;
+
+  z-index: 120;
+
+  pointer-events: none;
+}
+
+.akatsuki-drawer--open {
+  pointer-events: auto;
+}
+
+.akatsuki-drawer__overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(4, 7, 10, 0.72);
+
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+
+  opacity: 0;
+
+  transition: opacity 0.32s ease;
+}
+
+.akatsuki-drawer--open .akatsuki-drawer__overlay {
+  opacity: 1;
+}
+
+.akatsuki-drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: min(400px, 92vw);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #120b0e;
+
+  border-left: 1px solid rgba(255, 95, 109, 0.2);
+
+  box-shadow: -24px 0 64px rgba(0, 0, 0, 0.55);
+
+  transform: translateX(105%);
+
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.akatsuki-drawer--open .akatsuki-drawer__panel {
+  transform: translateX(0);
+}
+
+.akatsuki-drawer__media {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  height: clamp(290px, 40vh, 372px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      color-mix(in srgb, var(--ak-member, #ff4057) 30%, transparent),
+      #120b0e 88%
+    );
+}
+
+.akatsuki-drawer__media img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.akatsuki-drawer__media::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--ak-member, #ff4057) 14%, transparent) 0%,
+    rgba(120, 18, 34, 0.2) 30%,
+    transparent 52%,
+    rgba(18, 11, 14, 0.42) 76%,
+    #120b0e 100%
+  );
+
+  pointer-events: none;
+}
+
+.akatsuki-drawer__stamp {
+  position: absolute;
+  top: 42%;
+  right: 2%;
+
+  transform: translateY(-50%) rotate(-10deg);
+
+  font-family: 'Bangers', cursive;
+  font-size: clamp(96px, 12vh, 132px);
+  line-height: 1;
+
+  color: color-mix(in srgb, var(--ak-member, #ff4057) 30%, transparent);
+
+  text-shadow: 0 0 44px color-mix(in srgb, var(--ak-member, #ff4057) 34%, transparent);
+
+  pointer-events: none;
+}
+
+.akatsuki-drawer__bingo {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+
+  z-index: 3;
+
+  padding: 5px 10px;
+
+  color: #ff9aa4;
+
+  background: rgba(9, 13, 18, 0.5);
+
+  border: 1px solid rgba(255, 95, 109, 0.3);
+  border-radius: 4px;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.akatsuki-drawer__file-no {
+  position: absolute;
+  bottom: 22px;
+  left: 20px;
+
+  z-index: 3;
+
+  color: rgba(255, 240, 242, 0.62);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.akatsuki-drawer__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  z-index: 4;
+
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  background: rgba(9, 13, 18, 0.55);
+
+  border: 1px solid color-mix(in srgb, var(--ak-member, #ff4057) 45%, transparent);
+  border-radius: 50%;
+
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.akatsuki-drawer__close:hover {
+  background: color-mix(in srgb, var(--ak-member, #ff4057) 55%, transparent);
+
+  border-color: var(--ak-member, #ff4057);
+
+  transform: rotate(6deg);
+}
+
+.akatsuki-drawer__close:focus-visible,
+.akatsuki-drawer__cta:focus-visible {
+  outline: 2px solid #ff4d5e;
+  outline-offset: 2px;
+}
+
+.akatsuki-drawer__body {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 20px 24px 24px;
+}
+
+.akatsuki-drawer__eyebrow {
+  margin-bottom: 8px;
+
+  color: #ff8a96;
+
+  font-family: 'Permanent Marker', cursive;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+}
+
+.akatsuki-drawer__name {
+  margin-bottom: 2px;
+
+  font-family: 'Bangers', cursive;
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1.6px;
+
+  color: #ffffff;
+}
+
+.akatsuki-drawer__role {
+  margin-bottom: 16px;
+
+  color: #b9c2ca;
+
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.akatsuki-drawer__facts {
+  display: grid;
+
+  margin: 0 0 18px;
+  padding: 4px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.akatsuki-drawer__facts > div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+
+  gap: 14px;
+
+  align-items: baseline;
+
+  padding: 11px 2px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.akatsuki-drawer__facts > div:last-child {
+  border-bottom: none;
+}
+
+.akatsuki-drawer__facts dt {
+  color: #6d7882;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.akatsuki-drawer__facts dd {
+  margin: 0;
+
+  color: #f0f3f6;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.akatsuki-drawer__facts dd b {
+  display: inline-grid;
+  place-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  margin-right: 8px;
+
+  color: #ff6a74;
+
+  background: rgba(178, 26, 43, 0.2);
+
+  border-radius: 50%;
+
+  font-family: 'Bangers', cursive;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.akatsuki-drawer__notes-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #6d7882;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.akatsuki-drawer__short {
+  margin: 0;
+
+  color: #b3bdc6;
+
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.akatsuki-drawer__footer {
+  flex: 0 0 auto;
+
+  padding: 14px 24px 18px;
+
+  background: linear-gradient(180deg, #171014, #120c0f);
+
+  border-top: 1px solid rgba(255, 95, 109, 0.18);
+}
+
+.akatsuki-drawer__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 15px 20px;
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #d12f3d, #8f1523);
+
+  border: 1px solid rgba(255, 122, 136, 0.5);
+  border-radius: 10px;
+
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+
+  box-shadow:
+    0 10px 24px rgba(178, 26, 43, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.akatsuki-drawer__cta:hover {
+  transform: translateY(-1px);
+
+  background: linear-gradient(135deg, #e03a48, #9f1727);
+
+  border-color: rgba(255, 150, 162, 0.65);
+
+  box-shadow:
+    0 14px 30px rgba(178, 26, 43, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.akatsuki-drawer__cta span:last-child {
+  transition: transform 0.25s ease;
+}
+
+.akatsuki-drawer__cta:hover span:last-child {
+  transform: translateX(3px);
+}
+
+/* ========================================
+   KEYFRAMES
+======================================== */
+
+@keyframes akatsuki-glow-breathe {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.14);
+  }
+}
+
+@keyframes akatsuki-cloud-drift {
+  0% {
+    transform: translateX(-6vw);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.16;
+  }
+
+  82% {
+    opacity: 0.16;
+  }
+
+  100% {
+    transform: translateX(112vw);
+    opacity: 0;
+  }
+}
+
+@keyframes akatsuki-tile-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .akatsuki-hero {
+    min-height: 520px;
+    padding: calc(var(--nav-h, 72px) + 30px) 6% 36px;
+  }
+
+  .akatsuki-hero__cloud--a {
+    --cb: 34px;
+  }
+
+  .akatsuki-hero__cloud--b {
+    --cb: 22px;
+  }
+
+  .akatsuki-hero__cloud--c {
+    --cb: 26px;
+  }
+
+  .akatsuki-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    margin-top: 18px;
+  }
+
+  .akatsuki-feature {
+    grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+  }
+
+  .akatsuki-org {
+    padding: 20px 0 104px;
+  }
+
+  .akatsuki-org__grid {
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+
+    padding-top: 34px;
+  }
+}
+
+@media (max-width: 760px) {
+  .akatsuki-roster {
+    width: calc(100% - 40px);
+
+    padding: 0 0 88px;
+  }
+
+  .akatsuki-roster__head {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .akatsuki-roster__count {
+    padding-bottom: 0;
+  }
+
+  .akatsuki-feature {
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px auto;
+
+    min-height: 0;
+  }
+
+  .akatsuki-feature__media {
+    min-height: 0;
+  }
+
+  .akatsuki-feature__media::after {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 95, 109, 0.06) 0%,
+      rgba(120, 18, 34, 0.2) 60%,
+      #120a0d 100%
+    );
+  }
+
+  .akatsuki-feature__glyph {
+    font-size: clamp(100px, 26vw, 160px);
+  }
+
+  .akatsuki-feature__veil {
+    background: none;
+  }
+
+  .akatsuki-feature__body {
+    padding: 26px 24px 30px;
+  }
+
+  .akatsuki-feature__index {
+    top: auto;
+    right: auto;
+    bottom: 18px;
+    left: 24px;
+  }
+
+  .akatsuki-org {
+    width: calc(100% - 40px);
+
+    padding: 16px 0 88px;
+  }
+
+  .akatsuki-org__grid {
+    gap: 40px;
+
+    padding-top: 34px;
+  }
+
+  .akatsuki-org__cloud--a {
+    --cb: 60px;
+  }
+
+  .akatsuki-org__cloud--b {
+    --cb: 26px;
+  }
+
+  .akatsuki-drawer__panel {
+    top: auto;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    max-height: min(88dvh, 720px);
+
+    border-top: 1px solid rgba(255, 95, 109, 0.24);
+    border-left: none;
+    border-radius: 18px 18px 0 0;
+
+    transform: translateY(105%);
+  }
+
+  .akatsuki-drawer--open .akatsuki-drawer__panel {
+    transform: translateY(0);
+  }
+
+  .akatsuki-drawer__media {
+    height: min(34vh, 268px);
+  }
+
+  .akatsuki-drawer__body {
+    padding: 18px 22px 26px;
+  }
+
+  .akatsuki-drawer__footer {
+    padding: 12px 22px calc(16px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 640px) {
+  .akatsuki-hero {
+    min-height: 470px;
+    padding: calc(var(--nav-h, 72px) + 24px) 24px 30px;
+  }
+
+  .akatsuki-hero__title {
+    font-size: clamp(54px, 15vw, 88px);
+    letter-spacing: 2px;
+  }
+
+  .akatsuki-hero__tagline {
+    font-size: 15px;
+  }
+
+  .akatsuki-hero__cta {
+    min-height: 46px;
+  }
+
+  .akatsuki-grid {
+    gap: 12px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .akatsuki-hero__kanji,
+  .akatsuki-hero__cloud,
+  .akatsuki-hero__glow,
+  .akatsuki-tile {
+    animation: none;
+  }
+
+  .akatsuki-feature,
+  .akatsuki-feature__media img,
+  .akatsuki-feature__name,
+  .akatsuki-feature__hint,
+  .akatsuki-feature__hint span,
+  .akatsuki-tile,
+  .akatsuki-tile__media img,
+  .akatsuki-tile__media::after,
+  .akatsuki-tile__glyph,
+  .akatsuki-tile__cloud,
+  .akatsuki-tile__name,
+  .akatsuki-tile__partner,
+  .akatsuki-hero__cta,
+  .akatsuki-hero__cta span,
+  .akatsuki-drawer__overlay,
+  .akatsuki-drawer__panel,
+  .akatsuki-drawer__close,
+  .akatsuki-drawer__cta,
+  .akatsuki-drawer__cta span:last-child {
+    transition: none;
+  }
+
+  .akatsuki-hero__cloud i {
+    opacity: 0.12;
+  }
+
+  .akatsuki-org__cloud {
+    opacity: 0.1;
+  }
+}

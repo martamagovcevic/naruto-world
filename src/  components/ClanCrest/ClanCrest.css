@@ -1,0 +1,111 @@
+/* ========================================
+   CLAN CREST
+   A single inline crest. Colour comes from
+   `--crest-accent` / `--crest-glow`, which
+   each clan supplies through its mood.
+======================================== */
+.clan-crest {
+  display: block;
+
+  overflow: visible;
+
+  color: var(--crest-accent);
+}
+
+.clan-crest--sm {
+  width: 44px;
+  height: 44px;
+}
+
+.clan-crest--md {
+  width: 84px;
+  height: 84px;
+}
+
+.clan-crest--lg {
+  width: clamp(132px, 16vw, 196px);
+  height: clamp(132px, 16vw, 196px);
+}
+
+.crest__halo {
+  fill: var(--crest-accent);
+
+  opacity: 0.08;
+}
+
+.crest__ring {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.6;
+
+  opacity: 0.55;
+}
+
+.crest__stroke {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.crest__pupil {
+  fill: var(--crest-glow);
+
+  stroke: none;
+
+  opacity: 0.9;
+}
+
+/* ---- MOTIF TWEAKS ---- */
+
+.crest__motif--chakra-line .crest__chakra-vessels {
+  opacity: 0.75;
+}
+
+.crest__motif--chakra-line .crest__stroke {
+  stroke-width: 1.5;
+}
+
+.crest__motif--mental .crest__waves .crest__stroke {
+  opacity: 0.55;
+
+  animation: crest-ripple 4.2s ease-in-out infinite;
+}
+
+.crest__motif--mental .crest__waves .crest__stroke:nth-child(2) {
+  animation-delay: -1.4s;
+}
+
+.crest__motif--mental .crest__waves .crest__stroke:nth-child(3) {
+  animation-delay: -2.8s;
+}
+
+.crest__motif--shadow .crest__stroke {
+  stroke-width: 1.7;
+}
+
+@keyframes crest-ripple {
+  0%,
+  100% {
+    opacity: 0.24;
+  }
+
+  50% {
+    opacity: 0.62;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crest__motif--mental .crest__waves .crest__stroke {
+    animation: none;
+
+    opacity: 0.45;
+  }
+}

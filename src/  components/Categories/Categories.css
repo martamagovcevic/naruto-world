@@ -1,0 +1,252 @@
+.categories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  padding: 0 8%;
+
+  background-color: #0b1117;
+  border-top: 1px solid #1d2730;
+  border-bottom: 1px solid #1d2730;
+}
+
+.category-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: inherit;
+  text-decoration: none;
+  padding: 34px 20px 30px;
+
+  text-align: center;
+
+  border-right: 1px solid #1d2730;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+
+  animation: category-in 0.55s ease both;
+}
+
+.category-card::before {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: var(--accent, #d68a4e);
+
+  opacity: 0.25;
+
+  transition: opacity 0.25s ease;
+}
+
+.category-card:first-child {
+  border-left: 1px solid #1d2730;
+}
+
+.category-card:nth-child(1) {
+  --accent: #d68a4e;
+  animation-delay: 0ms;
+}
+
+.category-card:nth-child(2) {
+  --accent: #6fa8dc;
+  animation-delay: 60ms;
+}
+
+.category-card:nth-child(3) {
+  --accent: #7cb083;
+  animation-delay: 120ms;
+}
+
+.category-card:nth-child(4) {
+  --accent: #c96f6f;
+  animation-delay: 180ms;
+}
+
+.category-card:nth-child(5) {
+  --accent: #b089c9;
+  animation-delay: 240ms;
+}
+
+.category-card:focus-visible {
+  outline: 2px solid var(--accent, #ff7a2f);
+  outline-offset: -2px;
+}
+
+.category-card:hover {
+  background-color: #111a22;
+  transform: translateY(-4px);
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-card__icon {
+  display: block;
+  margin-bottom: 12px;
+
+  font-size: 30px;
+
+  transition: transform 0.25s ease;
+}
+
+.category-card:hover .category-card__icon {
+  transform: scale(1.15);
+}
+
+.category-card h3 {
+  margin-bottom: 7px;
+
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.category-card p {
+  color: #7f8a93;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.category-card__kanji {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+
+  color: color-mix(in srgb, var(--accent, #d68a4e) 22%, transparent);
+
+  font-family: 'Bangers', cursive;
+  font-size: 34px;
+  line-height: 1;
+
+  pointer-events: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.category-card:hover .category-card__kanji {
+  color: color-mix(in srgb, var(--accent, #d68a4e) 45%, transparent);
+
+  transform: translateY(-2px);
+}
+
+.category-card__link-hint {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 14px;
+
+  color: var(--accent, #d68a4e);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  transform: translateY(4px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.category-card__link-hint::after {
+  content: '→';
+
+  font-size: 14px;
+
+  transition: transform 0.25s ease;
+}
+
+.category-card:hover .category-card__link-hint {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.category-card:hover .category-card__link-hint::after {
+  transform: translateX(3px);
+}
+
+@keyframes category-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card {
+    animation: none;
+  }
+
+  .category-card__icon,
+  .category-card__kanji,
+  .category-card__link-hint,
+  .category-card__link-hint::after {
+    transition: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 0 6%;
+  }
+
+  .category-card {
+    min-width: 0;
+    padding: 26px 16px 22px;
+    border: 0;
+    box-shadow: inset 0 -1px #1d2730;
+  }
+
+  .category-card:first-child {
+    border-left: 0;
+  }
+
+  .category-card p {
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 20px;
+  }
+
+  .category-card {
+    padding: 26px 12px 22px;
+  }
+
+  .category-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
